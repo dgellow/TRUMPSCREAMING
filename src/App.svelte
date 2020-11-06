@@ -6,11 +6,20 @@
 	onMount(tweetsStore.fetch)
 </script>
 
-<pre>
+<main>
+	<h2>{$tweetsStore.length} tweets capitalized</h2>
 	{#each $tweetsStore as tweet}
 		<p>{tweet.text}</p>
 	{/each}
-</pre>
+</main>
 
 <style>
+	main {
+		width: 700px;
+		margin: auto;
+	}
+
+	p {
+		margin-bottom: 40px;
+	}
 </style>
