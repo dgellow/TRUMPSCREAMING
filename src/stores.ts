@@ -1,9 +1,11 @@
+import { update_keyed_each } from "svelte/internal"
 import { writable } from "svelte/store"
 import { fetchLatestTweets, Tweet } from "./client"
 
+export const roundNumbers = 10
 const minCapitalLetters = 2
 
-function createStore() {
+function createTweetsStore() {
 	const { subscribe, set } = writable<Tweet[]>([])
 	return {
 		subscribe,
@@ -38,4 +40,46 @@ function createStore() {
 	}
 }
 
-export const tweetsStore = createStore()
+export const tweetsStore = createTweetsStore()
+
+type Game = NotStarted | Round | End
+
+interface NotStarted {
+	state: "not_started"
+}
+
+interface Round {
+	state: "round"
+	roundNumber: number
+}
+
+interface End {
+	state: "done"
+}
+
+function createGameStore() {
+	const { subscribe, update } = writable<Game>({
+		state: "not_started",
+	})
+	return {
+		subscribe,
+		next() {
+			update(g => {
+				switch (g.state) {
+					case "not_started":
+						return { state: "round", roundNumber: 1 }
+					case "round":
+						if (g.roundNumber < roundNumbers) {
+							g.roundNumber += 1
+							return g
+						}
+						return { state: "done" }
+					case "done":
+						return { state: "not_started" }
+				}
+			})
+		}
+	}
+}
+
+export const gameStore = createGameStore()

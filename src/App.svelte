@@ -1,16 +1,22 @@
 <script lang="ts">
 	import { onMount } from "svelte"
 
-	import { tweetsStore } from "./stores"
+	import { gameStore, tweetsStore } from "./stores"
+	import Start from "./components/Start.svelte"
+	import Round from "./components/Round.svelte"
+	import End from "./components/End.svelte"
 
 	onMount(tweetsStore.fetch)
 </script>
 
 <main>
-	<h2>{$tweetsStore.length} tweets capitalized</h2>
-	{#each $tweetsStore as tweet}
-		<p>{tweet.text}</p>
-	{/each}
+	{#if $gameStore.state === 'not_started'}
+		<Start />
+	{:else if $gameStore.state === 'round'}
+		<Round />
+	{:else if $gameStore.state === 'done'}
+		<End />
+	{/if}
 </main>
 
 <style>
