@@ -27,9 +27,11 @@
 <style>
 	main {
 		margin: auto;
+		box-sizing: border-box;
 		min-height: 600px;
 		max-width: 550px;
 		position: relative;
+		padding-top: 40px;
 		padding-bottom: 200px;
 	}
 
