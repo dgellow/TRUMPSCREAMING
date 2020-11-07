@@ -4,15 +4,14 @@
 
 	$: adjective = total > 75 ? "a TREMENDOUS" : total > 50 ? "an OK" : "a LOSER"
 	$: share = {
-		text: encodeURI(`I scored ${adjective.toUpperCase()} ${total}% playing TRUMP IN CAPS! Can you do better?!`),
-		url: `https://`,
+		text: encodeURI(`I scored ${adjective.toUpperCase()} ${total}% playing TRUMP SCREAMING! Can you do better?!`),
+		url: `https://www.trumpscreaming.site`,
 		hashtags: [],
 		via: "dgellow",
 	}
 </script>
 
 <div>
-	{@debug $gameStore}
 	<h1>Challenge completed!</h1>
 	<p>Your total score is <b>{total}%</b>.</p>
 	{#if total > 75}
@@ -41,13 +40,21 @@
 		</p>
 	{/if}
 
-	<p>
+	<p class="share">
 		Share
 		<a
-			href="https://twitter.com/intent/tweet?text={share.text}&url={share.url}&hashtags={share.hashtags.join(',')}&via={share.via}">your
-			results</a>
+			href="https://twitter.com/intent/tweet?text={share.text}&url={share.url}&hashtags={share.hashtags.join(',')}&via={share.via}"
+			target="_blank">your results</a>
 		on Twitter.
 	</p>
 
-	<button on:click={() => gameStore.next()}>Back to start</button>
+	<button on:click={() => gameStore.next()}>Try again 👹!</button>
 </div>
+
+<style>
+	.share {
+		text-align: center;
+		font-size: 3em;
+		font-weight: bold;
+	}
+</style>
