@@ -13,12 +13,12 @@
 
 <div>
 	<h1>Challenge completed!</h1>
-	<p>Your total score is <b>{total}%</b>.</p>
+	<p class="score">Your final score is <b>{total}%</b>.</p>
 	{#if total > 75}
 		<p>
 			What a
 			<b>TREMENDOUS</b>
-			performance! You have the Trump vibe going strong in you. Surely something to be worried about...
+			performance! You have the Trump vibe going strong in you. Maybe something to be worried about...
 		</p>
 	{:else if total > 50}
 		<p>
@@ -52,9 +52,15 @@
 </div>
 
 <style>
+	.score {
+		font-size: 2em;
+		text-align: center;
+		border-bottom: 3px solid orange;
+	}
+
 	.share {
 		text-align: center;
-		font-size: 3em;
+		font-size: 1.2em;
 		font-weight: bold;
 	}
 </style>
