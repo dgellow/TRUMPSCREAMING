@@ -12,7 +12,7 @@
 		<span class="upper">TRUMP SPIRIT</span>
 		within
 		<span class="upper">YOU</span>
-		and ask yourself: Do you think you guess
+		and ask yourself: Do you think you can guess
 		<span class="upper">CORRECTLY</span>
 		when Trump is
 		<span class="upper">SCREAMING</span>
