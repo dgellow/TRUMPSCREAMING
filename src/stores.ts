@@ -1,5 +1,5 @@
 import { update_keyed_each } from "svelte/internal"
-import { writable } from "svelte/store"
+import { get, writable } from "svelte/store"
 import { fetchLatestTweets, Tweet } from "./client"
 
 export const roundNumbers = 10
@@ -25,7 +25,6 @@ function createTweetsStore() {
 						else count = 0
 
 						if (count > minCapitalLetters) {
-							console.log("curr", curr, "count", count)
 							acc.push(curr)
 							break
 						}
@@ -36,7 +35,10 @@ function createTweetsStore() {
 			})
 			set(capitalized)
 		},
-
+		randOne(): Tweet {
+			const tweets = get(tweetsStore)
+			return tweets[Math.floor(Math.random() * tweets.length)]
+		},
 	}
 }
 
@@ -51,6 +53,8 @@ interface NotStarted {
 interface Round {
 	state: "round"
 	roundNumber: number
+	tweet: Tweet
+	seenTweets: Set<string>
 }
 
 interface End {
@@ -67,10 +71,18 @@ function createGameStore() {
 			update(g => {
 				switch (g.state) {
 					case "not_started":
-						return { state: "round", roundNumber: 1 }
+						return {
+							state: "round", roundNumber: 1,
+							tweet: tweetsStore.randOne(),
+							seenTweets: new Set(),
+						}
 					case "round":
 						if (g.roundNumber < roundNumbers) {
 							g.roundNumber += 1
+							do {
+								g.tweet = tweetsStore.randOne()
+							} while (g.seenTweets.has(g.tweet.id))
+							g.seenTweets.add(g.tweet.id)
 							return g
 						}
 						return { state: "done" }
