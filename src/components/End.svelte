@@ -48,7 +48,7 @@
 		on Twitter.
 	</p>
 
-	<button on:click={() => gameStore.next()}>Try again 👹!</button>
+	<div class="button"><button on:click={() => gameStore.next()}>Try again 👹!</button></div>
 </div>
 
 <style>
@@ -62,5 +62,9 @@
 		text-align: center;
 		font-size: 1.2em;
 		font-weight: bold;
+	}
+
+	.button {
+		text-align: center;
 	}
 </style>
