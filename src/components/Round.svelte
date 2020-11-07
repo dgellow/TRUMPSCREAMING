@@ -88,6 +88,8 @@
 	let tweetWidget: Element
 	let tweetRendering: Promise<Element>
 	const renderTweet = () => {
+		if (!window.twttr) return
+
 		tweetRendering = twttr.widgets.createTweetEmbed(tweet.id, tweetWidget, {
 			cards: "hidden",
 			conversation: "none",
@@ -125,10 +127,10 @@
 	}
 	const cont = async () => {
 		submitted = false
-		tweetWidget.textContent = ""
 		gameStore.setRoundScore(score)
 		gameStore.next()
-		if (round < roundNumbers) {
+		if (round < roundNumbers && window.twttr) {
+			tweetWidget.textContent = ""
 			await tick()
 			renderTweet()
 		}
@@ -180,13 +182,18 @@
 		<h3>You score: {score}%</h3>
 	{/if}
 
-	<div bind:this={tweetWidget} hidden={!submitted}>
-		{#await tweetRendering}
-			<p>Loading tweet ...</p>
-		{:catch err}
-			<p style="color: red; font-weight: bold">Failed to load tweet: {err}</p>
-		{/await}
-	</div>
+	{#if window.twttr}
+		<div bind:this={tweetWidget} hidden={!submitted}>
+			{#await tweetRendering}
+				<p>Loading tweet ...</p>
+			{:catch err}
+				<p style="color: red; font-weight: bold">Failed to load tweet: {err}</p>
+			{/await}
+		</div>
+	{:else if submitted}
+		<p>Cannot load the tweet, Twitter blocked by ad blocker.</p>
+	{/if}
+
 	{#if submitted}
 		<p>See original <a href="https://twitter.com/realDonaldTrump/status/{tweet.id}" target="_blank">tweet</a>.</p>
 	{/if}
@@ -194,7 +201,13 @@
 	<div class="button">
 		{#if !submitted}
 			<button on:click={() => verify()}>Verify</button>
-		{:else}<button on:click={() => cont()}>Continue</button>{/if}
+		{:else}
+			{#await tweetRendering}
+				<button disabled={true}>Continue</button>
+			{:then _}
+				<button on:click={() => cont()}>Continue</button>
+			{/await}
+		{/if}
 	</div>
 </div>
 
