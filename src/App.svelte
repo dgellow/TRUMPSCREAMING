@@ -17,15 +17,27 @@
 	{:else if $gameStore.state === 'done'}
 		<End />
 	{/if}
+	<footer>
+		A weekend project by
+		<a href="https://twitter.com/dgellow" target="_blank">@dgellow</a>, made with
+		<a href="https://svelte.dev/" target="_blank">Svelte</a>.
+	</footer>
 </main>
 
 <style>
 	main {
-		max-width: 700px;
 		margin: auto;
+		min-height: 600px;
+		max-width: 550px;
+		position: relative;
+		padding-bottom: 200px;
 	}
 
-	p {
-		margin-bottom: 40px;
+	footer {
+		color: rgb(218, 218, 218);
+		position: absolute;
+		bottom: 0;
+		text-align: center;
+		width: 100%;
 	}
 </style>

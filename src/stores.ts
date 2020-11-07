@@ -44,7 +44,7 @@ function createTweetsStore() {
 
 export const tweetsStore = createTweetsStore()
 
-type Game = NotStarted | Round | End
+type Game = { scores: number[] } & (NotStarted | Round | End)
 
 interface NotStarted {
 	state: "not_started"
@@ -64,6 +64,7 @@ interface End {
 function createGameStore() {
 	const { subscribe, update } = writable<Game>({
 		state: "not_started",
+		scores: [],
 	})
 	return {
 		subscribe,
@@ -75,6 +76,7 @@ function createGameStore() {
 							state: "round", roundNumber: 1,
 							tweet: tweetsStore.randOne(),
 							seenTweets: new Set(),
+							scores: [],
 						}
 					case "round":
 						if (g.roundNumber < roundNumbers) {
@@ -85,10 +87,18 @@ function createGameStore() {
 							g.seenTweets.add(g.tweet.id)
 							return g
 						}
-						return { state: "done" }
+						return { state: "done", scores: g.scores }
 					case "done":
-						return { state: "not_started" }
+						return { state: "not_started", scores: [] }
 				}
+			})
+		},
+		setRoundScore(score: number) {
+			update(g => {
+				if (g.state === "round") {
+					g.scores.push(score)
+				}
+				return g
 			})
 		}
 	}

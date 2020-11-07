@@ -1,19 +1,46 @@
 <script lang="ts">
-	import { tick } from "svelte"
-
-	import { fade } from "svelte/transition"
-	import App from "../App.svelte"
+	import { onMount, tick } from "svelte"
 	import type { Tweet } from "../client"
-
 	import { gameStore, roundNumbers } from "../stores"
+
+	const adjectives = ["grumpy", "moody"]
+
 	let round = 0
 	let tweet: Tweet
+	let adjective: string
 	$: {
 		const game = $gameStore
 		if (game.state === "round") {
 			round = game.roundNumber
 			tweet = game.tweet
+			adjective = adjectives[Math.floor(Math.random() * adjectives.length)].toUpperCase()
 		}
+	}
+
+	const months = [
+		"January",
+		"February",
+		"March",
+		"April",
+		"May",
+		"June",
+		"July",
+		"August",
+		"September",
+		"October",
+		"November",
+		"December",
+	]
+	let date: string
+	let time: string
+	$: {
+		const d = new Date(tweet.date)
+		const month = months[d.getMonth()]
+		const day = d.getDate()
+		const hour = d.getHours().toString(10).padStart(2, "0")
+		const minutes = d.getMinutes().toString(10).padStart(2, "0")
+		date = month + " " + day
+		time = hour + ":" + minutes
 	}
 
 	let words: string[] = []
@@ -47,6 +74,8 @@
 		if (curr[0] === "@") return acc
 		// ignore words starting with '.'
 		if (curr[0] === ".") return acc
+		// ignore non-alpha-numeric
+		if (!/[A-Za-z]/.test(curr)) return acc
 
 		acc.add(index)
 		return acc
@@ -58,6 +87,15 @@
 
 	let tweetWidget: Element
 	let tweetRendering: Promise<Element>
+	const renderTweet = () => {
+		tweetRendering = twttr.widgets.createTweetEmbed(tweet.id, tweetWidget, {
+			cards: "hidden",
+			conversation: "none",
+			dnt: true,
+		})
+	}
+
+	onMount(renderTweet)
 
 	let submitted = false
 	let score = 100
@@ -79,77 +117,111 @@
 			}
 			results[i] = ok
 			score = Math.floor(score) // decimal aren't relevant
-
-			// render tweet
 		}
-		if (tweetWidget.childElementCount === 0)
-			tweetRendering = twttr.widgets.createTweetEmbed(tweet.id, tweetWidget, {
-				cards: "hidden",
-				conversation: "none",
-				dnt: true,
-			})
 	}
 
 	const toggle = (index: number) => {
 		playerChoice[index] = !playerChoice[index]
 	}
-	const cont = () => {
+	const cont = async () => {
 		submitted = false
 		tweetWidget.textContent = ""
+		gameStore.setRoundScore(score)
 		gameStore.next()
+		if (round < roundNumbers) {
+			await tick()
+			renderTweet()
+		}
 	}
 </script>
 
 <div>
 	<h2>Round #{round} on {roundNumbers}</h2>
-	<p class="tweet">
-		{#if submitted}
-			{#each words as word, index}
-				{#if choices.has(index)}
-					<span
-						class="word"
-						class:correct={word === (playerChoice[index] ? word.toUpperCase() : word.toLowerCase())}
-						class:incorrect={word !== (playerChoice[index] ? word.toUpperCase() : word.toLowerCase())}>
-						{words[index]}
-					</span>
-				{:else}<span class="word">{word}</span>{/if}
-			{/each}
-		{:else}
-			{#each words as word, index}
-				{#if choices.has(index)}
-					<span class="word selectable" class:uppercase={playerChoice[index]} on:click={() => toggle(index)}>
-						{#if playerChoice[index]}{words[index].toUpperCase()}{:else}{words[index].toLowerCase()}{/if}
-					</span>
-				{:else}<span class="word">{word}</span>{/if}
-			{/each}
-		{/if}
+	<p class="instructions">
+		<b>Instructions</b>: Select underlined
+		<span class="word selectable">words</span>
+		to guess which words were
+		<span class="word selectable uppercase">SCREAMED</span>!
 	</p>
-	{#await tweetRendering}
-		<p>Loading tweet ...</p>
-	{:catch err}
-		<p style="color: red; font-weight: bold">Failed to load tweet: {err}</p>
-	{/await}
-	<div bind:this={tweetWidget} />
+	<div class="tweet">
+		<div class="tweet-header">On {date} at {time}, a {adjective} Trump tweeted:</div>
+		<p class="tweet-body">
+			{#if submitted}
+				{#each words as word, index}
+					{#if choices.has(index)}
+						<span
+							class="word"
+							class:correct={word === (playerChoice[index] ? word.toUpperCase() : word.toLowerCase())}
+							class:incorrect={word !== (playerChoice[index] ? word.toUpperCase() : word.toLowerCase())}>
+							{#if playerChoice[index]}
+								{words[index].toUpperCase()}
+							{:else}{words[index].toLowerCase()}{/if}
+						</span>
+					{:else}<span class="word">{word}</span>{/if}
+				{/each}
+			{:else}
+				{#each words as word, index}
+					{#if choices.has(index)}
+						<span
+							class="word selectable"
+							class:uppercase={playerChoice[index]}
+							on:click={() => toggle(index)}>
+							{#if playerChoice[index]}
+								{words[index].toUpperCase()}
+							{:else}{words[index].toLowerCase()}{/if}
+						</span>
+					{:else}<span class="word">{word}</span>{/if}
+				{/each}
+			{/if}
+		</p>
+	</div>
 
-	{#if !submitted}
-		<button on:click={() => verify()}>Verify</button>
-	{:else}
-		<p>Score: {score}%</p>
-		<p>Source: <a href="https://twitter.com/realDonaldTrump/status/{tweet.id}" target="_blank">#{tweet.id}</a></p>
-		<button on:click={() => cont()}>Continue</button>
+	{#if submitted}
+		<h3>You score: {score}%</h3>
 	{/if}
+
+	<div bind:this={tweetWidget} hidden={!submitted}>
+		{#await tweetRendering}
+			<p>Loading tweet ...</p>
+		{:catch err}
+			<p style="color: red; font-weight: bold">Failed to load tweet: {err}</p>
+		{/await}
+	</div>
+	{#if submitted}
+		<p>See original <a href="https://twitter.com/realDonaldTrump/status/{tweet.id}" target="_blank">tweet</a>.</p>
+	{/if}
+
+	<div class="button">
+		{#if !submitted}
+			<button on:click={() => verify()}>Verify</button>
+		{:else}<button on:click={() => cont()}>Continue</button>{/if}
+	</div>
 </div>
 
 <style>
 	.tweet {
+		font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+		border: 1px solid lightgray;
+		border-radius: 14px;
+		padding: 20px;
+		max-width: 550px;
+		box-sizing: border-box;
+		margin-bottom: 20px;
+	}
+
+	.tweet-header {
+		font-weight: bold;
+	}
+
+	.tweet-body {
 		display: flex;
 		flex-wrap: wrap;
 		font-size: 1.2em;
-		font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 	}
 
 	.word {
 		margin-right: 5px;
+		margin-bottom: 8px;
 		color: rgb(65, 65, 65);
 	}
 	.selectable {
@@ -164,13 +236,23 @@
 
 	.selectable.uppercase {
 		background-color: rgb(248, 197, 31);
+		font-weight: bold;
 	}
 
 	.word.correct {
 		background-color: lightgreen;
+		color: green;
+		border-bottom: 2px solid green;
 	}
 
 	.word.incorrect {
 		background-color: rgb(255, 107, 107);
+		color: darkred;
+		font-weight: bold;
+		border-bottom: 2px solid darkred;
+	}
+
+	.button {
+		text-align: center;
 	}
 </style>
