@@ -158,8 +158,9 @@
 	<p class="instructions">
 		<b>Instructions</b>: Select underlined
 		<span class="word selectable">words</span>
-		to guess which words were
-		<span class="word selectable uppercase">SCREAMED</span>!
+		to guess which ones were
+		<span class="word selectable uppercase">SCREAMED</span>
+		out loud!
 	</p>
 	<p class="hint">Hint: {hint} words in ALL CAPS</p>
 	<div class="tweet">
