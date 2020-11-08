@@ -161,7 +161,7 @@
 		to guess which words were
 		<span class="word selectable uppercase">SCREAMED</span>!
 	</p>
-	<p class="hint">Hint: {hint} words</p>
+	<p class="hint">Hint: {hint} words in ALL CAPS</p>
 	<div class="tweet">
 		<div class="tweet-header">On {date} at {time}, a {adjective} Trump tweeted:</div>
 		<p class="tweet-body">
