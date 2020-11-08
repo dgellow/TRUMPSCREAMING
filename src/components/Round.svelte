@@ -96,6 +96,11 @@
 	let playerChoice = new Map<number, boolean>()
 	$: playerChoice = [...choices].reduce((acc, curr) => acc.set(curr, false), new Map<number, boolean>())
 
+	let hint = 0
+	$: hint = [...choices].reduce((acc, curr) => {
+		return words[curr] == words[curr].toUpperCase() ? acc + 1 : acc
+	}, 0)
+
 	let tweetWidget: Element
 	let tweetRendering: Promise<Element>
 	const renderTweet = () => {
@@ -156,6 +161,7 @@
 		to guess which words were
 		<span class="word selectable uppercase">SCREAMED</span>!
 	</p>
+	<p class="hint">Hint: {hint} words</p>
 	<div class="tweet">
 		<div class="tweet-header">On {date} at {time}, a {adjective} Trump tweeted:</div>
 		<p class="tweet-body">
@@ -278,5 +284,9 @@
 
 	.button {
 		text-align: center;
+	}
+
+	.hint {
+		color: lightgrey;
 	}
 </style>
