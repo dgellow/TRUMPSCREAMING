@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { gameStore } from "../stores"
+	import { gameStore, roundNumbers } from "../stores"
 </script>
 
 <div>
@@ -11,8 +11,9 @@
 		<span class="upper">SCREAMED OUT LOUD</span>?
 	</p>
 	<p>
-		You will be presented 10 tweets in a row, in lowercase. Select the underlined words to toggle their case, then
-		check your score!
+		You will be presented
+		{roundNumbers}
+		tweets in a row, in lowercase. Select the underlined words to toggle their case, then check your score!
 	</p>
 	<div class="button"><button on:click={() => gameStore.next()}>Let's start!🦅</button></div>
 </div>
