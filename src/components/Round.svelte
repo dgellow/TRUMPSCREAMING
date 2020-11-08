@@ -101,11 +101,11 @@
 
 	let submitted = false
 	let score = 100
-	$: results = words.map(() => false)
+	$: results = [...choices].map(() => false)
 	const verify = async () => {
 		submitted = true
 		score = 100 // reset the score
-		const percentagePerWord = Math.floor(100 / words.length)
+		const percentagePerWord = Math.floor(100 / choices.size)
 
 		// check what words are correctly capitalized
 		for (const i of choices) {
