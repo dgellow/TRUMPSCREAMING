@@ -1,0 +1,30 @@
+name: Update list of tweets
+
+on:
+  schedule:
+    - cron: "* * * * 1" # every Monday
+
+jobs:
+  update_tweets:
+    name: Fetch new tweets, create commit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: master
+      - name: Setup node.js environment
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      - name: Install dependencies
+        run: npm install
+      - name: Fetch tweets
+        run: npm run update-tweets
+      - name: Commit updated data.json
+        run: |
+          git config user.email "github-action-bot@example.com"
+          git config user.name "GitHub Action Bot"
+          git add public/data.json
+          git commit -m "Updated list of tweets"
+          git push
