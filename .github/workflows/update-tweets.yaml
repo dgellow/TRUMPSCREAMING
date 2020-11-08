@@ -2,7 +2,7 @@ name: Update list of tweets
 
 on:
   schedule:
-    - cron: "* * * * 1" # every Monday
+    - cron: "*/15 * * * *" # every Monday
 
 jobs:
   update_tweets:
