@@ -121,7 +121,7 @@
 	const verify = async () => {
 		submitted = true
 		score = 100 // reset the score
-		const percentagePerWord = Math.floor(100 / choices.size)
+		const percentagePerWord = 100 / choices.size
 
 		// check what words are correctly capitalized
 		for (const i of choices) {
@@ -134,8 +134,8 @@
 				score -= percentagePerWord
 			}
 			results[i] = ok
-			score = Math.floor(score) // decimal aren't relevant
 		}
+		score = score < 0 ? 0 : Math.floor(score) // decimal aren't relevant
 	}
 
 	const toggle = (index: number) => {
@@ -287,6 +287,6 @@
 	}
 
 	.hint {
-		color: lightgrey;
+		color: grey;
 	}
 </style>
