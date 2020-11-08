@@ -20,7 +20,8 @@
 	<footer>
 		A weekend project by
 		<a href="https://twitter.com/dgellow" target="_blank">@dgellow</a>, made with
-		<a href="https://svelte.dev/" target="_blank">Svelte</a>.
+		<a href="https://svelte.dev/" target="_blank">Svelte</a>. Check out the
+		<a href="https://github.com/dgellow/TRUMPSCREAMING" target="_blank">sources</a>.
 	</footer>
 </main>
 
