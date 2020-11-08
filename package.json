@@ -5,7 +5,8 @@
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "start": "sirv public",
-    "validate": "svelte-check"
+    "validate": "svelte-check",
+    "update-tweets": "node scripts/update_tweets.mjs"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^14.0.0",
@@ -23,6 +24,7 @@
     "@tsconfig/svelte": "^1.0.0"
   },
   "dependencies": {
+    "node-fetch": "^2.6.1",
     "sirv-cli": "^1.0.0"
   }
 }
