@@ -6,7 +6,7 @@
 	$: share = {
 		text: encodeURI(`I scored ${adjective.toUpperCase()} ${total}% playing TRUMP SCREAMING! Can you do better?!`),
 		url: `https://www.trumpscreaming.site`,
-		hashtags: [],
+		hashtags: ["TrumpScreaming", "TrumpTantrum"],
 		via: "dgellow",
 	}
 </script>
