@@ -2,7 +2,7 @@
 	import { gameStore } from "../stores"
 	$: total = Math.floor($gameStore.scores.reduce((acc, curr) => acc + curr, 0) / $gameStore.scores.length)
 
-	$: adjective = total > 75 ? "a TREMENDOUS" : total > 50 ? "an OK" : "a LOSER"
+	$: adjective = total > 85 ? "a TREMENDOUS" : total > 60 ? "an OK" : "a LOSER"
 	$: share = {
 		text: encodeURI(`I scored ${adjective.toUpperCase()} ${total}% playing TRUMP SCREAMING! Can you do better?!`),
 		url: `https://www.trumpscreaming.site`,
@@ -14,13 +14,13 @@
 <div>
 	<h1>Challenge completed!</h1>
 	<p class="score">Your final score is <b>{total}%</b>.</p>
-	{#if total > 75}
+	{#if total > 85}
 		<p>
 			What a
 			<b>TREMENDOUS</b>
 			performance! You have the Trump vibe going strong in you. Maybe something to be worried about...
 		</p>
-	{:else if total > 50}
+	{:else if total > 60}
 		<p>
 			An
 			<b>OK</b>
@@ -31,7 +31,7 @@
 	{:else}
 		<p>
 			What a
-			<b>LOSER</b>! I should
+			<b>LOSER</b>! We should
 			<b>FIRE YOU NOW</b>!!! Better to continue working on your Trumpian screaming skills if you don't want
 			<b>CHINA</b>
 			to
