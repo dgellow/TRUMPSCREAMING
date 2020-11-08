@@ -1,6 +1,7 @@
 name: Update list of tweets
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: "*/15 * * * *" # every Monday
 
