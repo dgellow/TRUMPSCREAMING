@@ -3,24 +3,18 @@
 </script>
 
 <div>
-	<h1>The TRUMP SCREAMING Game</h1>
+	<h1>The <span class="upper">TRUMP SCREAMING</span> game</h1>
 	<p>
-		Hey, you, are you a
-		<span class="upper">LOSER</span>
-		or
-		<span class="upper">A FRAUD</span>?! Listen closely to the
-		<span class="upper">TRUMP SPIRIT</span>
-		within
-		<span class="upper">YOU</span>
-		and ask yourself: Do you think you can guess
-		<span class="upper">CORRECTLY</span>
-		when Trump is
-		<span class="upper">SCREAMING</span>
-		out loud when
-		<span class="upper">TWEETING</span>?!
+		Rules are simple: can you guess correctly what parts of Trump tweets are in
+		<span class="upper">ALL CAPS</span>
+		and supposed to be
+		<span class="upper">SCREAMED OUT LOUD</span>?
 	</p>
-	<div class="button"><button on:click={() => gameStore.next()}>For sure, let's start!🦅</button></div>
-	<p class="no-cheater center"><span class="upper">NOT FOR CHEATERS</span></p>
+	<p>
+		You will be presented 10 tweets in a row, in lowercase. Select the underlined words to toggle their case, then
+		check your score!
+	</p>
+	<div class="button"><button on:click={() => gameStore.next()}>Let's start!🦅</button></div>
 </div>
 
 <style>
@@ -32,19 +26,8 @@
 		text-align: center;
 	}
 
-	.center {
-		text-align: center;
-	}
-
 	.upper {
 		font-weight: bold;
 		border-bottom: 2px solid orange;
-	}
-
-	.no-cheater .upper {
-		background-color: rgb(250, 129, 129);
-		border-color: darkred;
-		padding-left: 10px;
-		padding-right: 10px;
 	}
 </style>
