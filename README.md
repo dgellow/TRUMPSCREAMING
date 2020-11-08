@@ -1,6 +1,6 @@
 # The **TRUMP SCREAMING** game 👺
 
-Play at www.trumpscreaming.site!
+**Play at www.trumpscreaming.site!**
 
 Rules are simple: can you guess correctly what parts of Trump tweets are in ALL CAPS and supposed to be SCREAMED OUT LOUD?
 
