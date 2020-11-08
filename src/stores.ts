@@ -1,10 +1,10 @@
-import { update_keyed_each } from "svelte/internal"
 import { get, writable } from "svelte/store"
 import { fetchLatestTweets, Tweet } from "./client"
 
 export const roundNumbers = 6
 const minCapitalLetters = 2
 const minCapitalWords = 2
+
 
 function createTweetsStore() {
 	const { subscribe, set } = writable<Tweet[]>([])

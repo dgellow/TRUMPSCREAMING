@@ -3,7 +3,18 @@
 	import type { Tweet } from "../client"
 	import { gameStore, roundNumbers } from "../stores"
 
-	const adjectives = ["grumpy", "moody"]
+	const adjectives = [
+		"grumpy",
+		"moody",
+		"small-handed",
+		"grouchy",
+		"crotchety",
+		"crabby",
+		"clowny",
+		"sad",
+		"orange",
+		"thin-skinned",
+	]
 
 	let round = 0
 	let tweet: Tweet
