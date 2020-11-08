@@ -31,10 +31,10 @@ async function main() {
 			count++
 		}
 	}
-	console.log(`${count} new tweets found`)
+	console.log(`${count} new tweets found. Total of ${data.length} tweets.`)
 
 	await writeFile(targetfile, JSON.stringify(data, null, "\t"))
-	console.log("done")
+	console.log(`done: ${targetfile} updated.`)
 }
 
 main().catch(err => {
