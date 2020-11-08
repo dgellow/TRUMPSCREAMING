@@ -4,6 +4,7 @@ import { fetchLatestTweets, Tweet } from "./client"
 
 export const roundNumbers = 6
 const minCapitalLetters = 2
+const minCapitalWords = 2
 
 function createTweetsStore() {
 	const { subscribe, set } = writable<Tweet[]>([])
@@ -18,20 +19,21 @@ function createTweetsStore() {
 					if (curr === "") return acc
 					if (curr.toUpperCase() === "RT") return acc
 					if (curr[0] === "@") return acc
+					if (curr[0] === "#") return acc
 					if (curr.includes("://")) return acc
 					let count = 0
 					for (const c of curr) {
 						if (/[A-Z]/.test(c)) count++
 						else count = 0
 
-						if (count > minCapitalLetters) {
+						if (count >= minCapitalLetters) {
 							acc.push(curr)
 							break
 						}
 					}
 					return acc
 				}, [])
-				return capitalizedWords.length > 0
+				return capitalizedWords.length > minCapitalWords
 			})
 			set(capitalized)
 		},
