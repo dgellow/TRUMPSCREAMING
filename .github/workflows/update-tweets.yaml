@@ -24,8 +24,11 @@ jobs:
         run: npm run update-tweets
       - name: Commit updated data.json
         run: |
+          if [[ -z $(git status -s) ]]; then exit 0; fi
           git config user.email "github-action-bot@example.com"
           git config user.name "GitHub Action Bot"
+          git status
+          git diff
           git add public/data.json
           git commit -m "Updated list of tweets"
           git push
