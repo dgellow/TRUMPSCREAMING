@@ -1,5 +1,7 @@
 # The **TRUMP SCREAMING** game 👺
 
+[![Update list of tweets](https://github.com/dgellow/TRUMPSCREAMING/workflows/Update%20list%20of%20tweets/badge.svg)](https://github.com/dgellow/TRUMPSCREAMING/actions?query=workflow%3A%22Update+list+of+tweets%22)
+
 **Play at www.trumpscreaming.site!**
 
 Rules are simple: can you guess correctly what parts of Trump tweets are in ALL CAPS and supposed to be SCREAMED OUT LOUD?
