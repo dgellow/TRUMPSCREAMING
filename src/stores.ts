@@ -13,18 +13,35 @@ function createTweetsStore() {
 		async fetch() {
 			const tweets = await fetchLatestTweets()
 			const capitalized = tweets.filter(tweet => {
+				// ignore all lowercase tweets
+				if (tweet.text === tweet.text.toLowerCase()) return false
+				// ignore retweets
 				if (tweet.text.startsWith("RT ")) return false
 
-				const capitalizedWords = tweet.text.split(/\s/).reduce<string[]>((acc: string[], curr: string) => {
+				const words = tweet.text.split(/\s/).reduce<string[]>((acc, curr) => {
 					if (curr === "") return acc
+					// ignore retweets
 					if (curr.toUpperCase() === "RT") return acc
+					// ignore twitter usernames
 					if (curr[0] === "@") return acc
+					// ignore hashtags
 					if (curr[0] === "#") return acc
+					// ignore links
 					if (curr.includes("://")) return acc
+
+					acc.push(curr)
+					return acc
+				}, [])
+
+				// ignore full caps tweets
+				if (words.every(value => value === value.toUpperCase())) return false
+
+				const capitalizedWords = words.reduce<string[]>((acc, curr) => {
+					// only count words with at least 'minCapitalLetters' letters in full caps
 					let count = 0
 					for (const c of curr) {
-						if (/[A-Z]/.test(c)) count++
-						else count = 0
+						if (/[A-Z]/.test(c)) count++ // found an uppercase letter
+						else count = 0 // reset counter when a non uppercase letter is found
 
 						if (count >= minCapitalLetters) {
 							acc.push(curr)
@@ -33,6 +50,10 @@ function createTweetsStore() {
 					}
 					return acc
 				}, [])
+
+				// ignore full uppercase tweets
+				// if (capitalizedWords.every(value => value === value.toUpperCase())) return false
+
 				return capitalizedWords.length > minCapitalWords
 			})
 			set(capitalized)
@@ -97,9 +118,8 @@ function createGameStore() {
 		},
 		setRoundScore(score: number) {
 			update(g => {
-				if (g.state === "round") {
+				if (g.state === "round")
 					g.scores.push(score)
-				}
 				return g
 			})
 		}
