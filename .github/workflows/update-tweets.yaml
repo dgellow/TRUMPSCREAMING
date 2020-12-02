@@ -22,7 +22,7 @@ jobs:
         run: npm install
       - run: npx tsc
       - run: ls ./src
-      - run: mv ./src/client.js /src/client.mjs
+      - run: mv ./src/client.js ./src/client.mjs
       - name: Fetch tweets
         run: npm run update-tweets
       - name: Commit updated data.json and data_capitalized.json
