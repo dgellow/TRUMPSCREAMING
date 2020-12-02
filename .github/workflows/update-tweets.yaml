@@ -20,9 +20,10 @@ jobs:
           node-version: 14.x
       - name: Install dependencies
         run: npm install
+      - run: npx tsc && mv ./src/client.js /src/client.mjs
       - name: Fetch tweets
         run: npm run update-tweets
-      - name: Commit updated data.json
+      - name: Commit updated data.json and data_capitalized.json
         run: |
           if [[ -z $(git status -s) ]]; then exit 0; fi
           git config user.email "github-action-bot@example.com"
@@ -30,5 +31,6 @@ jobs:
           git status
           git diff
           git add public/data.json
+          git add public/data_capitalized.json
           git commit -m "Updated list of tweets"
           git push

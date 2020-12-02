@@ -6,12 +6,18 @@
 	import Round from "./components/Round.svelte"
 	import End from "./components/End.svelte"
 
-	onMount(tweetsStore.fetch)
+	let loading = true
+
+	onMount(async () => {
+		loading = true
+		await tweetsStore.fetch()
+		loading = false
+	})
 </script>
 
 <main>
 	{#if $gameStore.state === 'not_started'}
-		<Start />
+		<Start {loading} />
 	{:else if $gameStore.state === 'round'}
 		<Round />
 	{:else if $gameStore.state === 'done'}

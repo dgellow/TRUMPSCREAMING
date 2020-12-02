@@ -2,15 +2,17 @@ import fetch from "node-fetch"
 import fs from "fs"
 import { promisify } from "util"
 import { exit } from "process"
+import { filterTweetsCapitalized } from "../src/client.mjs"
 
 const readFile = promisify(fs.readFile)
 const writeFile = promisify(fs.writeFile)
 
 const sourceurl = "https://www.thetrumparchive.com/latest-tweets"
-const targetfile = "./public/data.json"
+const dataFile = "./public/data.json"
+const dataCapitalizedFile = "./public/data_capitalized.json"
 
 async function main() {
-	const buffer = await readFile(targetfile)
+	const buffer = await readFile(dataFile)
 	const data = JSON.parse(buffer)
 	const set = new Set()
 	for (const d of data)
@@ -33,8 +35,13 @@ async function main() {
 	}
 	console.log(`${count} new tweets found. Total of ${data.length} tweets.`)
 
-	await writeFile(targetfile, JSON.stringify(data, null, "\t"))
-	console.log(`done: ${targetfile} updated.`)
+	await writeFile(dataFile, JSON.stringify(data, null, "\t"))
+	console.log(`${dataFile} updated.`)
+
+	const capitalizedData = filterTweetsCapitalized(data)
+	console.log(`Total of ${capitalizedData.length} tweets capitalized.`)
+	await writeFile(dataCapitalizedFile, JSON.stringify(capitalizedData, null, "\t"))
+	console.log(`${dataCapitalizedFile} updated.`)
 }
 
 main().catch(err => {

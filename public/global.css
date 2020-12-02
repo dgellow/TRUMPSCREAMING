@@ -65,7 +65,8 @@ button {
 }
 
 button:disabled {
-	color: #999;
+	color           : #999;
+	background-color: lightgrey;
 }
 
 button:not(:disabled):active {
