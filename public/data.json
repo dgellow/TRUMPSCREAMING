@@ -17558,5 +17558,115 @@
 		"favorites": "42401",
 		"retweets": "13386",
 		"date": "2020-12-02T20:56:29.000Z"
+	},
+	{
+		"id": "1334351957113311233",
+		"text": "https://t.co/tZSLBlrlTv",
+		"isRetweet": false,
+		"isDeleted": false,
+		"device": "Twitter for iPhone",
+		"favorites": "97292",
+		"retweets": "33645",
+		"date": "2020-12-03T04:21:12.000Z"
+	},
+	{
+		"id": "1334327894844248070",
+		"text": "https://t.co/YEBGzS1OB3",
+		"isRetweet": false,
+		"isDeleted": false,
+		"device": "Twitter for iPhone",
+		"favorites": "80733",
+		"retweets": "22162",
+		"date": "2020-12-03T02:45:35.000Z"
+	},
+	{
+		"id": "1334327603340201984",
+		"text": "https://t.co/VDJRAW94ki",
+		"isRetweet": false,
+		"isDeleted": false,
+		"device": "Twitter for iPhone",
+		"favorites": "86735",
+		"retweets": "22286",
+		"date": "2020-12-03T02:44:25.000Z"
+	},
+	{
+		"id": "1334327470972137474",
+		"text": "https://t.co/6RcWjBtkoF",
+		"isRetweet": false,
+		"isDeleted": false,
+		"device": "Twitter for iPhone",
+		"favorites": "65791",
+		"retweets": "16792",
+		"date": "2020-12-03T02:43:54.000Z"
+	},
+	{
+		"id": "1334327204847775744",
+		"text": "https://t.co/s1PiR5LBlt",
+		"isRetweet": false,
+		"isDeleted": false,
+		"device": "Twitter for iPhone",
+		"favorites": "55984",
+		"retweets": "14978",
+		"date": "2020-12-03T02:42:50.000Z"
+	},
+	{
+		"id": "1334326746615865344",
+		"text": "https://t.co/JONLHVoEwQ",
+		"isRetweet": false,
+		"isDeleted": false,
+		"device": "Twitter for iPhone",
+		"favorites": "52538",
+		"retweets": "13561",
+		"date": "2020-12-03T02:41:01.000Z"
+	},
+	{
+		"id": "1334303260279234562",
+		"text": "https://t.co/DVDyvbGIKz",
+		"isRetweet": false,
+		"isDeleted": false,
+		"device": "Twitter for iPhone",
+		"favorites": "142032",
+		"retweets": "34881",
+		"date": "2020-12-03T01:07:42.000Z"
+	},
+	{
+		"id": "1334282156349267970",
+		"text": "In Arizona, it turns out that 3% of the votes cast in the 100 count vote sampling were tainted or worse. This would be, if carried forward, approximately 90,000 votes more than we would need to win the State. Now we were granted a much larger sample to work with. Wow!",
+		"isRetweet": false,
+		"isDeleted": false,
+		"device": "Twitter for iPhone",
+		"favorites": "217426",
+		"retweets": "51797",
+		"date": "2020-12-02T23:43:50.000Z"
+	},
+	{
+		"id": "1334279349835620354",
+		"text": "RT @RSBNetwork: Watch Live: @RudyGiuliani Appears Before Michigan House Oversight Committee https://t.co/CJijbiww17",
+		"isRetweet": true,
+		"isDeleted": false,
+		"device": "Twitter for iPhone",
+		"favorites": "0",
+		"retweets": "14495",
+		"date": "2020-12-02T23:32:41.000Z"
+	},
+	{
+		"id": "1334279292700778496",
+		"text": "HAPPENING NOW! @OANN https://t.co/JPWQNISItN",
+		"isRetweet": false,
+		"isDeleted": false,
+		"device": "Twitter for iPhone",
+		"favorites": "90666",
+		"retweets": "17125",
+		"date": "2020-12-02T23:32:27.000Z"
+	},
+	{
+		"id": "1334256021020217346",
+		"text": "RT @AZGOP: In today's update, Chairwoman @kelliwardaz announces the findings from our investigation of 100 duplicate ballots, in which TWO…",
+		"isRetweet": true,
+		"isDeleted": false,
+		"device": "Twitter for iPhone",
+		"favorites": "0",
+		"retweets": "15844",
+		"date": "2020-12-02T21:59:59.000Z"
 	}
 ]
