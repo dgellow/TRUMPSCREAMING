@@ -22626,5 +22626,93 @@
 		"retweets": "55020",
 		"date": "2020-12-24T13:23:22.000Z",
 		"isFlagged": false
+	},
+	{
+		"id": "1342624069687062528",
+		"text": "But we already know enough, and we won big! https://t.co/hGWnz6R8Vd",
+		"isRetweet": false,
+		"isDeleted": false,
+		"device": "Twitter for iPhone",
+		"favorites": "152670",
+		"retweets": "34194",
+		"date": "2020-12-26T00:11:37.000Z",
+		"isFlagged": false
+	},
+	{
+		"id": "1342622275900731392",
+		"text": "RT @marklevinshow: Merry Christmas to President Trump, the First Lady, and the Trump family!  God bless you!  And thank you for fighting fo…",
+		"isRetweet": true,
+		"isDeleted": false,
+		"device": "Twitter for iPhone",
+		"favorites": "0",
+		"retweets": "20405",
+		"date": "2020-12-26T00:04:29.000Z",
+		"isFlagged": false
+	},
+	{
+		"id": "1342559171649167366",
+		"text": "Thank you! https://t.co/579bfpa4TD",
+		"isRetweet": false,
+		"isDeleted": false,
+		"device": "Twitter for iPhone",
+		"favorites": "187137",
+		"retweets": "33780",
+		"date": "2020-12-25T19:53:44.000Z",
+		"isFlagged": false
+	},
+	{
+		"id": "1342558923656744960",
+		"text": "RT @DineshDSouza: The President and First Lady have released a Christmas message that all of America needs to see: https://t.co/Jb6swz7A6Q",
+		"isRetweet": true,
+		"isDeleted": false,
+		"device": "Twitter for iPhone",
+		"favorites": "0",
+		"retweets": "13022",
+		"date": "2020-12-25T19:52:45.000Z",
+		"isFlagged": false
+	},
+	{
+		"id": "1342556287872233474",
+		"text": "Going now to make a short speech to service members from all over the world. It is a celebration of Christmas. Video Conference - Fake News not invited!",
+		"isRetweet": false,
+		"isDeleted": false,
+		"device": "Twitter for iPhone",
+		"favorites": "253803",
+		"retweets": "43924",
+		"date": "2020-12-25T19:42:17.000Z",
+		"isFlagged": false
+	},
+	{
+		"id": "1342555377951510528",
+		"text": "The greatest of all time. Fake News! https://t.co/jiWjLrynQW",
+		"isRetweet": false,
+		"isDeleted": false,
+		"device": "Twitter for iPhone",
+		"favorites": "112828",
+		"retweets": "21860",
+		"date": "2020-12-25T19:38:40.000Z",
+		"isFlagged": false
+	},
+	{
+		"id": "1342554825465196544",
+		"text": "Made many calls and had meetings at Trump International in Palm Beach, Florida. Why would politicians not want to give people $2000, rather than only $600? It wasn’t their fault, it was China. Give our people the money!",
+		"isRetweet": false,
+		"isDeleted": false,
+		"device": "Twitter for iPhone",
+		"favorites": "266148",
+		"retweets": "51381",
+		"date": "2020-12-25T19:36:28.000Z",
+		"isFlagged": false
+	},
+	{
+		"id": "1342463237841948672",
+		"text": "MERRY CHRISTMAS!",
+		"isRetweet": false,
+		"isDeleted": false,
+		"device": "Twitter for iPhone",
+		"favorites": "736589",
+		"retweets": "100211",
+		"date": "2020-12-25T13:32:32.000Z",
+		"isFlagged": false
 	}
 ]
