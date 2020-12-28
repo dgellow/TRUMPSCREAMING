@@ -23044,5 +23044,38 @@
 		"retweets": "30471",
 		"date": "2020-12-26T12:19:12.000Z",
 		"isFlagged": false
+	},
+	{
+		"id": "1343336121040777217",
+		"text": "Good news on Covid Relief Bill. Information to follow!",
+		"isRetweet": false,
+		"isDeleted": false,
+		"device": "Twitter for iPhone",
+		"favorites": "230224",
+		"retweets": "39499",
+		"date": "2020-12-27T23:21:03.000Z",
+		"isFlagged": false
+	},
+	{
+		"id": "1343328708963299338",
+		"text": "See you in Washington, DC, on January 6th. Don’t miss it. Information to follow!",
+		"isRetweet": false,
+		"isDeleted": false,
+		"device": "Twitter for iPhone",
+		"favorites": "308888",
+		"retweets": "67566",
+		"date": "2020-12-27T22:51:36.000Z",
+		"isFlagged": false
+	},
+	{
+		"id": "1343328283824447488",
+		"text": "On behalf of two GREAT Senators, @sendavidperdue &amp; @KLoeffler, I will be going to Georgia on Monday night, January 4th., to have a big and wonderful RALLY. So important for our Country that they win!",
+		"isRetweet": false,
+		"isDeleted": false,
+		"device": "Twitter for iPhone",
+		"favorites": "182923",
+		"retweets": "38270",
+		"date": "2020-12-27T22:49:55.000Z",
+		"isFlagged": false
 	}
 ]
