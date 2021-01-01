@@ -23616,5 +23616,71 @@
 		"retweets": "40078",
 		"date": "2020-12-30T12:29:52.000Z",
 		"isFlagged": false
+	},
+	{
+		"id": "1344867566456627201",
+		"text": "https://t.co/7YHKqgjAub",
+		"isRetweet": false,
+		"isDeleted": false,
+		"device": "Twitter for iPhone",
+		"favorites": "96644",
+		"retweets": "29068",
+		"date": "2021-01-01T04:46:28.000Z",
+		"isFlagged": false
+	},
+	{
+		"id": "1344867453915029504",
+		"text": "https://t.co/FDUVk8cm9S",
+		"isRetweet": false,
+		"isDeleted": false,
+		"device": "Twitter for iPhone",
+		"favorites": "68314",
+		"retweets": "22516",
+		"date": "2021-01-01T04:46:02.000Z",
+		"isFlagged": false
+	},
+	{
+		"id": "1344856422102818816",
+		"text": "RT @TheFirstonTV: Joe Biden did a \"victory lap\" but had \"a lot of trouble speaking\" &amp; there was one major thing missing from his speech, sa…",
+		"isRetweet": true,
+		"isDeleted": false,
+		"device": "Twitter for iPhone",
+		"favorites": "0",
+		"retweets": "11030",
+		"date": "2021-01-01T04:02:11.000Z",
+		"isFlagged": false
+	},
+	{
+		"id": "1344853996977197056",
+		"text": "Sen. Josh Hawley Slams Walmart Tweet Calling Him a ‘Sore Loser‘ https://t.co/wmShnPcrzj via @BreitbartNews America is proud of Josh and the many others who are joining him. The USA cannot have fraudulent elections!",
+		"isRetweet": false,
+		"isDeleted": false,
+		"device": "Twitter for iPhone",
+		"favorites": "97425",
+		"retweets": "24870",
+		"date": "2021-01-01T03:52:33.000Z",
+		"isFlagged": false
+	},
+	{
+		"id": "1344852043681435648",
+		"text": "Finished off the year with the highest Stock Market in history. Setting records with your 401k’s, just like I said you would. Congratulations to all!",
+		"isRetweet": false,
+		"isDeleted": false,
+		"device": "Twitter for iPhone",
+		"favorites": "249425",
+		"retweets": "41877",
+		"date": "2021-01-01T03:44:48.000Z",
+		"isFlagged": false
+	},
+	{
+		"id": "1344717975891402759",
+		"text": "https://t.co/2kYtZF8Mei",
+		"isRetweet": false,
+		"isDeleted": false,
+		"device": "Twitter for iPhone",
+		"favorites": "212848",
+		"retweets": "52380",
+		"date": "2020-12-31T18:52:03.000Z",
+		"isFlagged": false
 	}
 ]
