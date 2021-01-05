@@ -24727,5 +24727,148 @@
 		"retweets": "9915",
 		"date": "2021-01-03T12:51:37.000Z",
 		"isFlagged": false
+	},
+	{
+		"id": "1346304362730168320",
+		"text": "https://t.co/tJkmEhSqY5",
+		"isRetweet": false,
+		"isDeleted": false,
+		"device": "Twitter for iPhone",
+		"favorites": "82494",
+		"retweets": "19382",
+		"date": "2021-01-05T03:55:47.000Z",
+		"isFlagged": false
+	},
+	{
+		"id": "1346304329301504002",
+		"text": "https://t.co/X0CIj5dFlV",
+		"isRetweet": false,
+		"isDeleted": false,
+		"device": "Twitter for iPhone",
+		"favorites": "77783",
+		"retweets": "17007",
+		"date": "2021-01-05T03:55:39.000Z",
+		"isFlagged": false
+	},
+	{
+		"id": "1346304273425047553",
+		"text": "https://t.co/zkFfhX0hOQ",
+		"isRetweet": false,
+		"isDeleted": false,
+		"device": "Twitter for iPhone",
+		"favorites": "65139",
+		"retweets": "14453",
+		"date": "2021-01-05T03:55:26.000Z",
+		"isFlagged": false
+	},
+	{
+		"id": "1346304227635834881",
+		"text": "https://t.co/gWj2obEKm8",
+		"isRetweet": false,
+		"isDeleted": false,
+		"device": "Twitter for iPhone",
+		"favorites": "61371",
+		"retweets": "13818",
+		"date": "2021-01-05T03:55:15.000Z",
+		"isFlagged": false
+	},
+	{
+		"id": "1346300462899875840",
+		"text": "https://t.co/9fRvjIgqKE",
+		"isRetweet": false,
+		"isDeleted": false,
+		"device": "Twitter for iPhone",
+		"favorites": "112114",
+		"retweets": "28738",
+		"date": "2021-01-05T03:40:18.000Z",
+		"isFlagged": false
+	},
+	{
+		"id": "1346271579664220160",
+		"text": "On my way, see you soon! https://t.co/7QW23k5b9r",
+		"isRetweet": false,
+		"isDeleted": false,
+		"device": "Twitter for iPhone",
+		"favorites": "153086",
+		"retweets": "28511",
+		"date": "2021-01-05T01:45:31.000Z",
+		"isFlagged": false
+	},
+	{
+		"id": "1346267953042497537",
+		"text": "https://t.co/3LNZWTO8NY",
+		"isRetweet": false,
+		"isDeleted": false,
+		"device": "Twitter for iPhone",
+		"favorites": "78122",
+		"retweets": "21022",
+		"date": "2021-01-05T01:31:07.000Z",
+		"isFlagged": false
+	},
+	{
+		"id": "1346239227827265537",
+		"text": "Heading to Georgia now. See you soon!",
+		"isRetweet": false,
+		"isDeleted": false,
+		"device": "Twitter for iPhone",
+		"favorites": "278195",
+		"retweets": "36929",
+		"date": "2021-01-04T23:36:58.000Z",
+		"isFlagged": false
+	},
+	{
+		"id": "1346120645613150208",
+		"text": "The “Surrender Caucus” within the Republican Party will go down in infamy as weak and ineffective “guardians” of our Nation, who were willing to accept the certification of fraudulent presidential numbers!",
+		"isRetweet": false,
+		"isDeleted": false,
+		"device": "Twitter for iPhone",
+		"favorites": "227332",
+		"retweets": "60044",
+		"date": "2021-01-04T15:45:46.000Z",
+		"isFlagged": false
+	},
+	{
+		"id": "1346115128719245313",
+		"text": "“We are not acting to thwart the Democratic process, we are acting to protect it.” @SenRonJohnson",
+		"isRetweet": false,
+		"isDeleted": false,
+		"device": "Twitter for iPhone",
+		"favorites": "263628",
+		"retweets": "59098",
+		"date": "2021-01-04T15:23:50.000Z",
+		"isFlagged": false
+	},
+	{
+		"id": "1346112444108836864",
+		"text": "“We’ve seen in the last few months, unprecedented amounts of Voter Fraud.” @SenTedCruz  True!",
+		"isRetweet": false,
+		"isDeleted": false,
+		"device": "Twitter for iPhone",
+		"favorites": "240840",
+		"retweets": "54401",
+		"date": "2021-01-04T15:13:10.000Z",
+		"isFlagged": false
+	},
+	{
+		"id": "1346110956078817280",
+		"text": "How can you certify an election when the numbers being certified are verifiably WRONG. You will see the real numbers tonight during my speech, but especially on JANUARY 6th. @SenTomCotton Republicans have pluses &amp; minuses, but one thing is sure, THEY NEVER FORGET!",
+		"isRetweet": false,
+		"isDeleted": false,
+		"device": "Twitter for iPhone",
+		"favorites": "206561",
+		"retweets": "57241",
+		"date": "2021-01-04T15:07:16.000Z",
+		"isFlagged": false
+	},
+	{
+		"id": "1346105727488765952",
+		"text": "RT @realDonaldTrump: I will be there. Historic day!",
+		"isRetweet": true,
+		"isDeleted": false,
+		"device": "Twitter for iPhone",
+		"favorites": "0",
+		"retweets": "49825",
+		"date": "2021-01-04T14:46:29.000Z",
+		"isFlagged": false
 	}
 ]
