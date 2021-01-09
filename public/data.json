@@ -25321,5 +25321,27 @@
 		"retweets": "140072",
 		"date": "2021-01-08T00:10:24.000Z",
 		"isFlagged": false
+	},
+	{
+		"id": "1347569870578266115",
+		"text": "To all of those who have asked, I will not be going to the Inauguration on January 20th.",
+		"isRetweet": false,
+		"isDeleted": false,
+		"device": "Twitter for iPhone",
+		"favorites": "510761",
+		"retweets": "83532",
+		"date": "2021-01-08T15:44:28.000Z",
+		"isFlagged": false
+	},
+	{
+		"id": "1347555316863553542",
+		"text": "The 75,000,000 great American Patriots who voted for me, AMERICA FIRST, and MAKE AMERICA GREAT AGAIN, will have a GIANT VOICE long into the future. They will not be disrespected or treated unfairly in any way, shape or form!!!",
+		"isRetweet": false,
+		"isDeleted": false,
+		"device": "Twitter for iPhone",
+		"favorites": "480997",
+		"retweets": "108844",
+		"date": "2021-01-08T14:46:38.000Z",
+		"isFlagged": false
 	}
 ]
